@@ -1,3 +1,51 @@
-uploads
-image-uploader
-venv
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pycache
+*.sqlite3
+.venv/
+env/
+venv/
+instance/
+*.log
+
+# Flask uploads
+uploads/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Docker
+*.pid
+*.seed
+*.tar
+*.swp
+
+# Docker Compose
+docker-compose.override.yml
+
+# Kubernetes / Helm
+*.tgz
+charts/
+.tmp/
+values.override.yaml
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+crash.log
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.iml
+
+# Misc
+*.bak
+*.tmp
