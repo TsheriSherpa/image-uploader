@@ -20,7 +20,7 @@ add-ingress:
 	minikube addons enable ingress
 
 # Build Docker image inside Minikube
-build: minikube-docker
+build: minikube-docker add-ingress
 	@echo "Switching Docker to Minikube..."
 	@echo "Building Docker image..."
 	eval $$(minikube docker-env) && docker build -t $(IMAGE) . 2>&1 | tee build.log
@@ -43,13 +43,8 @@ pods:
 logs:
 	kubectl logs -l app=$(APP_NAME) --tail=50 -f
 
-# Access the service in browser
-service-url:
-	@echo "Getting service URL..."
-	minikube service $(SERVICE_NAME) --url
-
 # Full deploy (build + helm)
-deploy: build helm-deploy pods service-url
+deploy: build helm-deploy pods
 
 # Clean Minikube cluster
 minikube-clean:
@@ -62,4 +57,4 @@ minikube-clean:
 images: minikube-docker
 	docker images
 
-.PHONY: minikube-docker build helm-uninstall helm-deploy pods logs service-url deploy minikube-clean images
+.PHONY: minikube-docker build helm-uninstall helm-deploy pods logs deploy minikube-clean images add-ingress
