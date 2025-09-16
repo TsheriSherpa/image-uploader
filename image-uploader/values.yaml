@@ -18,7 +18,8 @@ resources:
     memory: "512Mi"
 
 ingress:
-  enabled: false
+  enabled: true
+  host: image-uploader.local
 
 serviceAccount:
   create: true
