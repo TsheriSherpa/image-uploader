@@ -49,3 +49,7 @@ crash.log
 # Misc
 *.bak
 *.tmp
+
+
+#Virtual Environment
+venv/
