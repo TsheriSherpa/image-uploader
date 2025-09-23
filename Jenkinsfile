@@ -65,7 +65,7 @@ pipeline {
 
     post {
         success {
-            echo "Tests passed and deployment of image-uploader successful!"
+            echo "Tests passed and deployment of image-uploader successfull!"
         }
         failure {
             echo "Pipeline failed. Check the logs for test or deployment errors."
