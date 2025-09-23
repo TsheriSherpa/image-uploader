@@ -25,7 +25,7 @@ pipeline {
                 sh """
                 # Create a virtual environment for testing
                 python3 -m venv venv
-                source venv/bin/activate
+                . venv/bin/activate
 
                 # Install dependencies (Flask, pytest, etc.)
                 pip3 install --upgrade pip
