@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.11-slim'   // Python + pip included
-            args '-u root:root'         // Run as root so packages can be installed
-        }
-    }
+    agent any
 
     environment {
         DOCKER_HUB_USERNAME = "tsheri"
