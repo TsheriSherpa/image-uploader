@@ -47,7 +47,7 @@ pipeline {
         stage('Setup Kubernetes') {
             steps {
                 sh """
-                # Use Minikube context
+                # Use Minikube contexts
                 kubectl config use-context minikube
 
                 # Create namespace if it doesn't exist
