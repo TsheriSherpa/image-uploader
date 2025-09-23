@@ -38,7 +38,7 @@ pipeline {
         stage('Run Unit Tests') {
             steps {
                 sh """
-                source venv/bin/activate
+                . venv/bin/activate
                 pytest tests/ --maxfail=1 --disable-warnings -v
                 """
             }
