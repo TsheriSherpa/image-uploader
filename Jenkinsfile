@@ -46,7 +46,7 @@ pipeline {
                 kubectl config use-context minikube
 
                 # Create namespace if it doesn't exist
-                kubectl get ns ${NAMESPACE} || kubectl create ns ${NAMESPACE}
+                kubectl --insecure-skip-tls-verify=true get ns ${NAMESPACE} || kubectl create ns ${NAMESPACE}
                 """
             }
         }
