@@ -54,7 +54,7 @@ pipeline {
         stage('Deploy with Helm') {
             steps {
                 sh """
-                helm upgrade --install image-uploader ./image-uploader \
+                helm upgrade --install image-uploader /var/jenkins_home/workspace/ImageUploaderPipeline/image-uploader \
                     --namespace ${NAMESPACE} \
                     --set image.repository=${DOCKER_HUB_USERNAME}/image-uploader \
                     --set image.tag=latest
